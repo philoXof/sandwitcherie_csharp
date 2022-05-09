@@ -9,13 +9,18 @@ namespace sandwitcherie_csharp
     internal class Invoice
     {
 
-        List<Sandwich> sandwiches;
-        int amount;
+        List<Sandwich> sandwiches { get; set; }
+        double amount { get; set; }
 
-        public Invoice(List<Sandwich> sandwiches, int amount)
+        public Invoice(List<Sandwich> sandwiches, double amount)
         {
             this.sandwiches = sandwiches;
             this.amount = amount;
         }
+
+
+
+
+
     }
 }
