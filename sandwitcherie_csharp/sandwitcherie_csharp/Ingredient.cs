@@ -1,31 +1,20 @@
-﻿
-
-namespace sandwitcherie_csharp
+﻿namespace sandwitcherie_csharp
 {
-
-    class Ingredient
+    public class Ingredient
     {
-        private double quantity;
-        private string name;
+        private double Quantity{ get; }
+        private string Name{ get; }
 
 
         public Ingredient(double quantity, string name)
         {
-            this.quantity = quantity;
-            this.name = name;
+            Quantity = quantity;
+            Name = name;
         }
 
-
-        public double Quantity
+        public override string ToString()
         {
-            get => quantity;
-            set => quantity = value;
-        }
-
-        public string Name
-        {
-            get => name;
-            set => name = value ?? throw new ArgumentNullException(nameof(value));
+            return "Quantity : " + Quantity + ", name" + Name;
         }
     }
 }

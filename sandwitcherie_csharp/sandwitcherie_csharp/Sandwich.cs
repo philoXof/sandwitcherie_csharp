@@ -1,23 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace sandwitcherie_csharp
+﻿namespace sandwitcherie_csharp
 {
     public class Sandwich
     {
-        private string name;
-        private List<Ingredient> ingredients;
-        private double price;
+        private string Name { get; }
+        private List<Ingredient> Ingredients { get; }
+        private double Price { get; }
 
 
         public Sandwich(string name, List<Ingredient> ingredients, double price)
         {
-            this.name = name;
-            this.ingredients = ingredients;
-            this.price = price;
+            Name = name;
+            Ingredients = ingredients;
+            Price = price;
         }
 
 
@@ -25,11 +19,11 @@ namespace sandwitcherie_csharp
         {
             return
             "{ \n"+
-            "name : " + name + ", \n" +
+            "name : " + Name + ", \n" +
                 "{ \n" +
-                    "ingredients : " + ingredients.ToString() + " \n" +
+                    "ingredients : " + Ingredients.ToString() + " \n" +
                 "}, \n" +
-            "}\n";
+            "}\n" + Price;
         }
         
     }
