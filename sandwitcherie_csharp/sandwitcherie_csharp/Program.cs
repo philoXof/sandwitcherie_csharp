@@ -10,7 +10,7 @@ while (command != "q")
 {
     Console.WriteLine("En attente de vote commande...");
     command = Console.ReadLine();
-    if (!availableSandwich.Sandwiches.ContainsKey(command) || command != "q")
+    if (!availableSandwich.Sandwiches.ContainsKey(command) && command != "q")
     {
         Console.WriteLine(command + " est invalid");  
     }else if (command != "q")
