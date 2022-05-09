@@ -10,6 +10,10 @@ namespace sandwitcherie_csharp
     {
         public string parse(string value)
         {
+            for (int i = 0; i < value.Length; i++)
+            {
+                
+            }
             return "";
         }
     }

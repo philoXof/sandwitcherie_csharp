@@ -21,10 +21,19 @@
             "{ \n"+
             "name : " + Name + ", \n" +
                 "{ \n" +
-                    "ingredients : " + Ingredients.ToString() + " \n" +
+                    "Ingredient : " + listToString(Ingredients) + " \n" +
                 "}, \n" +
             "}\n" + Price;
         }
-        
+
+        private string listToString(List<Ingredient> ingredients)
+        {
+            var res = "";
+            ingredients.ForEach(ingredient =>
+            {
+                res += ingredient.ToString();
+            } );
+            return res;
+        }
     }
 }

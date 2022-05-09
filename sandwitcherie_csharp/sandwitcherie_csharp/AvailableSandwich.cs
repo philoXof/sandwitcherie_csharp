@@ -10,7 +10,7 @@ public class AvailableSandwich
 
     public Dictionary<string, Sandwich> Sandwiches { get; } = new(){
         { 
-            "Sandwich1", 
+            "1", 
             new Sandwich(
                 "Jambon beurre", 
                 new List<Ingredient>
@@ -23,7 +23,7 @@ public class AvailableSandwich
                 3.5) 
         },
         { 
-            "Sandwich2", 
+            "2", 
             new Sandwich(
                 " Poulet crudités", 
                 new List<Ingredient>
@@ -38,7 +38,7 @@ public class AvailableSandwich
                 5) 
         },
         {
-            "Sandwich3", 
+            "3", 
             new Sandwich(
                 "Dieppois",
                 new List<Ingredient>
