@@ -1,22 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace sandwitcherie_csharp
 {
-    internal class Ingredient
+    public class Ingredient
     {
-        int quantity;
+        private double quantity{ get; set; }
 
-        String name;
+        private string name{ get; set; }
 
-        public Ingredient(int quantity, string name)
+        public Ingredient(double quantity, string name)
         {
             this.quantity = quantity;
             this.name = name;
         }
 
+       
     }
 }

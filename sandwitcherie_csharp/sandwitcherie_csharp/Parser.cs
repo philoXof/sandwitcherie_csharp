@@ -8,5 +8,9 @@ namespace sandwitcherie_csharp
 {
     internal class Parser
     {
+        public string parse(string value)
+        {
+            return "";
+        }
     }
 }
