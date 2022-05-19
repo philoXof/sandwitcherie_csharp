@@ -2,16 +2,14 @@
 
 using sandwitcherie_csharp;
 
-var availableSandwich = new AvailableSandwich();
-var command = "";
-Console.WriteLine("Hello Subway!");
-
 
 // A Sandwich1, B Sandwich2, C Sandwich1
+
+Console.WriteLine("Hello Subway!");
+
+var command = "";
 var parser = new Parser();
 var commandValidation = new CommandValidation();
-
-
 
 
 while (command != "q")
@@ -21,12 +19,13 @@ while (command != "q")
 
     while (command == "")
     {
+        Console.WriteLine("Entrez une commande...    (Tapez q pour quitter)");
         command = Console.ReadLine();
     }
 
     if(command != "q")
     {
-        var commandParsed = parser.Parse(command);
+        var commandParsed = Parser.Parse(command);
 
 
         Console.WriteLine(commandValidation.IsValid(commandParsed));

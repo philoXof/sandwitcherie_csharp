@@ -18,9 +18,6 @@ namespace sandwitcherie_csharp
             this.amount = amount;
         }
 
-
-
-
-
+        
     }
 }
