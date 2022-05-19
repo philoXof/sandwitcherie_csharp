@@ -4,8 +4,8 @@ using sandwitcherie_csharp;
 
 
 // A Sandwich1, B Sandwich2, C Sandwich1
-
-Console.WriteLine("Hello Subway!");
+var consoleMenu = new ConsoleMenu();
+consoleMenu.SayHello();
 
 var command = "";
 var parser = new Parser();
@@ -14,12 +14,12 @@ var commandValidation = new CommandValidation();
 
 while (command != "q")
 {
-    Console.WriteLine("En attente de vote commande...");
+    consoleMenu.WaitingCommand();
     command = Console.ReadLine();
 
     while (command == "")
     {
-        Console.WriteLine("Entrez une commande...    (Tapez q pour quitter)");
+        consoleMenu.CommandIsEmpty();
         command = Console.ReadLine();
     }
 
@@ -42,7 +42,8 @@ while (command != "q")
     }
     
 }
-Console.WriteLine("Goodbye Subway!");
+consoleMenu.SayGoodBye();
+
 
 
 /*
