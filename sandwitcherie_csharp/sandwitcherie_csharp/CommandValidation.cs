@@ -23,13 +23,11 @@ public class CommandValidation
 
      private Boolean SandwichExist(string sandwich)
      {
-         // TODO : prendre en compte de chiffre
+         string sandwichId = new String(sandwich.Where(Char.IsDigit).ToArray());
+         Console.WriteLine("sandwichId = " + sandwichId);
          
          var availableSandwich = new AvailableSandwich();
-         
-         
-         
-         return availableSandwich.Sandwiches.ContainsKey(sandwich[^1].ToString());
+         return availableSandwich.Sandwiches.ContainsKey(sandwichId);
      }
     
 
