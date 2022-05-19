@@ -8,13 +8,23 @@ namespace sandwitcherie_csharp
 {
     internal class Parser
     {
-        public string parse(string value)
+        public string[] Parse(string value)
         {
-            for (int i = 0; i < value.Length; i++)
+            string[] sandwichTab = value.Split(',');
+            
+            for (int i = 0; i < sandwichTab.Length; i++)
             {
+                sandwichTab[i] = sandwichTab[i].Trim();
+
                 
+                Console.WriteLine($"{sandwichTab[i]}");
             }
-            return "";
+
+            return sandwichTab;
         }
+        
     }
+    
 }
+
+

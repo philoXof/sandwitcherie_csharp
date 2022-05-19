@@ -6,16 +6,40 @@ var availableSandwich = new AvailableSandwich();
 var command = "";
 Console.WriteLine("Hello Subway!");
 
+
+// A Sandwich1, B Sandwich2, C Sandwich1
+var parser = new Parser();
+var commandValidation = new CommandValidation();
+
+
+
+
 while (command != "q")
 {
     Console.WriteLine("En attente de vote commande...");
     command = Console.ReadLine();
-    if (!availableSandwich.Sandwiches.ContainsKey(command) && command != "q")
+
+    while (command == "")
     {
-        Console.WriteLine(command + " est invalid");  
-    }else if (command != "q")
+        command = Console.ReadLine();
+    }
+
+    if(command != "q")
     {
-        Console.WriteLine( availableSandwich.Sandwiches[command].ToString());
+        var commandParsed = parser.Parse(command);
+
+
+        Console.WriteLine(commandValidation.IsValid(commandParsed));
+        
+        /*
+        {
+            Console.WriteLine(command + " est invalid");
+        }
+        else if (command != "q")
+        {
+            Console.WriteLine(availableSandwich.Sandwiches[command].ToString());
+        }
+        */
     }
     
 }
