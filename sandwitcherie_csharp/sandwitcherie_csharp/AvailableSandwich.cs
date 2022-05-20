@@ -8,7 +8,7 @@ public class AvailableSandwich
     {
     }
 
-    public Dictionary<string, Sandwich> Sandwiches { get; } = new(){
+    public static Dictionary<string, Sandwich> Sandwiches { get; } = new(){
         { 
             "1", 
             new Sandwich(
@@ -52,5 +52,10 @@ public class AvailableSandwich
                 4.50)
         }
     };
+
+    public static Sandwich IdToSandwich(string id)
+    {
+        return Sandwiches[id];
+    }
 
 }

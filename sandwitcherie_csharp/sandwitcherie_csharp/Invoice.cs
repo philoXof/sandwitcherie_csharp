@@ -6,35 +6,33 @@ using System.Threading.Tasks;
 
 namespace sandwitcherie_csharp
 {
-    internal class Invoice
+    internal static class Invoice
     {
-        private List<Sandwich> Sandwiches { get; set; }
-        private double Amount { get; set; }
-
-        public Invoice(List<Sandwich> sandwiches)
-        {
-            this.Sandwiches = sandwiches;
-            CalculAmount();
-        }
         
-        private void CalculAmount()
+        private static readonly Parser Parser = new Parser();
+        
+        
+        private static double CalculAmount(List<Sandwich> sandwiches)
         {
-            Sandwiches.ForEach(sandwich => this.Amount += sandwich.Price);
+            double amount = 0;
+            sandwiches.ForEach(sandwich => amount += sandwich.Price);
+            return amount;
         }
 
 
 
-        public void Generate(string[] command)
+        public static void Generate(string[] command)
         {
+            var sandwiches = new List<Sandwich>();
             foreach (var sandwich in command)
             {
-                var sandwichId = new String(sandwich.Where(Char.IsDigit).ToArray());
-
-                var availableSandwich = new AvailableSandwich();
-
-                Console.WriteLine(availableSandwich.Sandwiches[sandwichId]);
-                Console.WriteLine($"Prix de la facture : {Amount}");
+                var sandwichId = Parser.GetSandwichId(sandwich);
+                sandwiches.Add(AvailableSandwich.IdToSandwich(sandwichId));
+                Console.WriteLine(AvailableSandwich.Sandwiches[sandwichId]);
             }
+            
+            Console.WriteLine($"Prix de la facture : {CalculAmount(sandwiches)}");
+            
         }
 
         

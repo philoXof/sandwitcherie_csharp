@@ -2,11 +2,15 @@
 
 public class CommandValidation
 {
-    
+    private static readonly Parser Parser = new Parser();
+    private static readonly AvailableSandwich AvailableSandwich = new AvailableSandwich();
     private static bool InputVerification(string command)
     {
         return command.Contains("Sandwich");
     }
+    
+    
+    // A Sandwich1, B Sandwich2, C Sandwich1
     
     // ASCII lettres majuscule 65 à 90
      private static bool OrderVerification(string[] command)
@@ -19,24 +23,27 @@ public class CommandValidation
          return true;
      }
 
+     private static bool NumberOnlyAtEnd(string sandwich)
+     {
+         var checking = sandwich[..9];
+         return new string(checking.Where(char.IsDigit).ToArray()) == "";
+     }
+     
+     
      private static bool SandwichExist(string sandwich)
      {
-         //Extract digits from a string
-         var sandwichId = new String(sandwich.Where(Char.IsDigit).ToArray());
-         Console.WriteLine("sandwichId = " + sandwichId);
-         
-         
-         var availableSandwich = new AvailableSandwich();
-         return availableSandwich.Sandwiches.ContainsKey(sandwichId);
+         var sandwichId = Parser.GetSandwichId(sandwich);
+         return AvailableSandwich.Sandwiches.ContainsKey(sandwichId);
      }
     
 
-    public bool IsValid(string[] command)
+    public static bool IsValid(string[] command)
     {
         if (!OrderVerification(command)) return false;
         
         foreach (var sandwich in command)
         {
+            if (!NumberOnlyAtEnd(sandwich)) return false;
             if (!(InputVerification(sandwich) && SandwichExist(sandwich))) return false;
         }
         return true;

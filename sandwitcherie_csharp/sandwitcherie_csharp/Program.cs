@@ -10,7 +10,6 @@ consoleMenu.SayHello();
 
 var command = "";
 var parser = new Parser();
-var commandValidation = new CommandValidation();
 
 
 while (command != "q")
@@ -18,7 +17,7 @@ while (command != "q")
     consoleMenu.WaitingCommand();
     command = Console.ReadLine();
 
-    while (command == "")
+    while (string.IsNullOrEmpty(command))
     {
         consoleMenu.CommandIsEmpty();
         command = Console.ReadLine();
@@ -27,56 +26,15 @@ while (command != "q")
     if(command != "q")
     {
         var commandParsed = parser.Parse(command);
-
-
-        Console.WriteLine(commandValidation.IsValid(commandParsed));
-
-        //tab de Sandwich (string)
-        
-        
-        
-        
-        
-        // TODO :
-            // Si command valide
-                //générer la facture
-                // Attendre une autre commande OU quitter
-            // Sinon
-                //Attendre une commande OU quitter
-        //
-        
-        
-            
-            
-        /*
+        if (CommandValidation.IsValid(commandParsed))
         {
-            Console.WriteLine(command + " est invalid");
+            Invoice.Generate(commandParsed);
         }
-        else if (command != "q")
+        else
         {
-            Console.WriteLine(availableSandwich.Sandwiches[command].ToString());
-        }
-        */
+            ConsoleMenu.InvalidCommand();
+        } 
     }
     
 }
 consoleMenu.SayGoodBye();
-
-
-
-/*
- * Après avoir interprété la commande en entrée, vous produirez une sortie console suivant la forme
-suivante :
-    A Sandwich1
-        Ingredient1
-        Ingredient2
-        [...]
-        IngredientN
-    B Sandwich2
-        Ingredient1
-        [...]
-        [...]
-    Prix total : XXX€
-*/
-
-

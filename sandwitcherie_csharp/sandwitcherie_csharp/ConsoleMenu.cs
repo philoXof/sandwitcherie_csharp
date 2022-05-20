@@ -22,10 +22,10 @@ public class ConsoleMenu
     {
         Console.WriteLine("Entrez une commande...    (Tapez q pour quitter)");
     }
-    
-    
-    
-    
-    
-    
+
+
+    public static void InvalidCommand()
+    {
+        Console.WriteLine("Command invalide");
+    }
 }

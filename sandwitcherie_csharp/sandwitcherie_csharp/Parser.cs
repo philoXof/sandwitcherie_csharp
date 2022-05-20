@@ -15,8 +15,6 @@ namespace sandwitcherie_csharp
             for (var i = 0; i < sandwichTab.Length; i++)
             {
                 sandwichTab[i] = sandwichTab[i].Trim();
-                
-                Console.WriteLine($"{sandwichTab[i]}");
             }
 
             return sandwichTab;

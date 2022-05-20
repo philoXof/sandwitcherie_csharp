@@ -14,7 +14,7 @@
 
         public override string ToString()
         {
-            return "Quantity : " + Quantity + ", name" + Name + "\n";
+            return "Quantity : " + Quantity + ", name : " + Name + "\n";
         }
     }
 }

@@ -18,12 +18,7 @@
         public override string ToString()
         {
             return
-            "{ \n"+
-            "name : " + Name + ", \n" +
-                "{ \n" +
-                    "Ingredient : " + ListToString(Ingredients) + " \n" +
-                "}, \n" +
-            "}\n" + Price;
+            "name : " + Name + ", \n" + "   Ingredient : \n " + ListToString(Ingredients) + " \n";
         }
 
         private string ListToString(List<Ingredient> ingredients)
@@ -31,7 +26,7 @@
             var res = "";
             ingredients.ForEach(ingredient =>
             {
-                res += ingredient.ToString();
+                res += "        " + ingredient;
             } );
             return res;
         }
