@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace sandwitcherie_csharp
 {
     internal class Parser
-    {
-        public static string[] Parse(string value)
+    { 
+        public string[] Parse(string value)
         {
             var sandwichTab = value.Split(',');
             
@@ -20,6 +20,13 @@ namespace sandwitcherie_csharp
             }
 
             return sandwichTab;
+        }
+
+
+        // TODO : Déplacer la fonction dans une autre classe ?
+        public string GetSandwichId(string sandwich)
+        {
+            return new String(sandwich.Where(Char.IsDigit).ToArray());
         }
         
     }

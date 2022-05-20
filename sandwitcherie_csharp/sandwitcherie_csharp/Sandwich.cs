@@ -4,7 +4,7 @@
     {
         private string Name { get; }
         private List<Ingredient> Ingredients { get; }
-        private double Price { get; }
+        public double Price { get; }
 
 
         public Sandwich(string name, List<Ingredient> ingredients, double price)
@@ -21,12 +21,12 @@
             "{ \n"+
             "name : " + Name + ", \n" +
                 "{ \n" +
-                    "Ingredient : " + listToString(Ingredients) + " \n" +
+                    "Ingredient : " + ListToString(Ingredients) + " \n" +
                 "}, \n" +
             "}\n" + Price;
         }
 
-        private string listToString(List<Ingredient> ingredients)
+        private string ListToString(List<Ingredient> ingredients)
         {
             var res = "";
             ingredients.ForEach(ingredient =>

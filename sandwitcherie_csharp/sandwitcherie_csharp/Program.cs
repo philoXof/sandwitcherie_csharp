@@ -4,6 +4,7 @@ using sandwitcherie_csharp;
 
 
 // A Sandwich1, B Sandwich2, C Sandwich1
+
 var consoleMenu = new ConsoleMenu();
 consoleMenu.SayHello();
 
@@ -25,11 +26,28 @@ while (command != "q")
 
     if(command != "q")
     {
-        var commandParsed = Parser.Parse(command);
+        var commandParsed = parser.Parse(command);
 
 
         Console.WriteLine(commandValidation.IsValid(commandParsed));
+
+        //tab de Sandwich (string)
         
+        
+        
+        
+        
+        // TODO :
+            // Si command valide
+                //générer la facture
+                // Attendre une autre commande OU quitter
+            // Sinon
+                //Attendre une commande OU quitter
+        //
+        
+        
+            
+            
         /*
         {
             Console.WriteLine(command + " est invalid");
