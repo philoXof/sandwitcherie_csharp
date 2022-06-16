@@ -2,7 +2,7 @@
 
 public class CommandValidation
 {
-    private static readonly Parser Parser = new Parser();
+    private static readonly SandwichParser sandwichParser = new SandwichParser();
     private static readonly AvailableSandwich AvailableSandwich = new AvailableSandwich();
     private static bool InputVerification(string command)
     {
@@ -32,7 +32,7 @@ public class CommandValidation
      
      private static bool SandwichExist(string sandwich)
      {
-         var sandwichId = Parser.GetSandwichId(sandwich);
+         var sandwichId = sandwichParser.GetSandwichId(sandwich);
          return AvailableSandwich.Sandwiches.ContainsKey(sandwichId);
      }
     

@@ -9,7 +9,7 @@ namespace sandwitcherie_csharp
     internal static class Invoice
     {
         
-        private static readonly Parser Parser = new Parser();
+        private static readonly SandwichParser sandwichParser = new SandwichParser();
         
         
         private static double CalculAmount(List<Sandwich> sandwiches)
@@ -26,7 +26,7 @@ namespace sandwitcherie_csharp
             var sandwiches = new List<Sandwich>();
             foreach (var sandwich in command)
             {
-                var sandwichId = Parser.GetSandwichId(sandwich);
+                var sandwichId = sandwichParser.GetSandwichId(sandwich);
                 sandwiches.Add(AvailableSandwich.IdToSandwich(sandwichId));
                 Console.WriteLine(AvailableSandwich.Sandwiches[sandwichId]);
             }

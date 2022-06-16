@@ -9,7 +9,7 @@ var consoleMenu = new ConsoleMenu();
 consoleMenu.SayHello();
 
 var command = "";
-var parser = new Parser();
+var sandwichParser = new SandwichParser();
 
 
 while (command != "q")
@@ -25,7 +25,7 @@ while (command != "q")
 
     if(command != "q")
     {
-        var commandParsed = parser.Parse(command);
+        var commandParsed = sandwichParser.Parse(command);
         if (CommandValidation.IsValid(commandParsed))
         {
             Invoice.Generate(commandParsed);
