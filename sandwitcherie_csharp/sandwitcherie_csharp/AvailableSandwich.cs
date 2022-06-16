@@ -11,45 +11,92 @@ public class AvailableSandwich
     public static Dictionary<string, Sandwich> Sandwiches { get; } = new(){
         { 
             "1", 
-            new Sandwich(
-                "Jambon beurre", 
-                new List<Ingredient>
-                {
-                    new Ingredient(1,"pain"),
-                    new Ingredient(1,"tranche de jambon"),
-                    new Ingredient(10,"beurre")
-                    
-                },
-                3.5) 
+            new SandwichBuilder()
+                .WithIngredients(
+                    new List<Ingredient>
+                    {
+                        new IngredientBuilder()
+                            .WithQuantity(1)
+                            .WithName("pain")
+                            .Build(),
+                        new IngredientBuilder()
+                            .WithQuantity(1)
+                            .WithName("tranche de jambon")
+                            .Build(),
+                        new IngredientBuilder()
+                            .WithQuantity(10)
+                            .WithName("beurre")
+                            .Build()
+                    })
+                .WithName("Jambon beurre")
+                .WithPrice(3.5)
+                .Build()
         },
         { 
             "2", 
-            new Sandwich(
-                " Poulet crudités", 
-                new List<Ingredient>
-                {
-                    new Ingredient(1,"pain"),
-                    new Ingredient(1,"oeuf"),
-                    new Ingredient(0.5,"tomate"),
-                    new Ingredient(1,"tranche de poulet"),
-                    new Ingredient(10,"mayo"),
-                    new Ingredient(10,"salade")
-                },
-                5) 
+            new SandwichBuilder()
+                .WithName("Poulet crudités")
+                .WithIngredients(
+                    new List<Ingredient>
+                    {
+                        new IngredientBuilder()
+                            .WithQuantity(1)
+                            .WithName("pain")
+                            .Build(),
+                        new IngredientBuilder()
+                            .WithQuantity(1)
+                            .WithName("oeuf")
+                            .Build(),
+                        new IngredientBuilder()
+                            .WithQuantity(0.5)
+                            .WithName("tomate")
+                            .Build(),
+                        new IngredientBuilder()
+                            .WithQuantity(1)
+                            .WithName("tranche de poulet")
+                            .Build(),
+                        new IngredientBuilder()
+                            .WithQuantity(10)
+                            .WithName("mayo")
+                            .Build(),
+                        new IngredientBuilder()
+                            .WithQuantity(10)
+                            .WithName("salade")
+                            .Build()
+                    })
+                .WithPrice(5)
+                .Build()
         },
         {
             "3", 
-            new Sandwich(
-                "Dieppois",
-                new List<Ingredient>
-                {
-                    new Ingredient(1,"pain"),
-                    new Ingredient(50,"thon"),
-                    new Ingredient(0.5,"tomate"),
-                    new Ingredient(10,"mayonnaise"),
-                    new Ingredient(10,"salade")
-                },
-                4.50)
+            new SandwichBuilder()
+                .WithName("Dieppois")
+                .WithIngredients(
+                    new List<Ingredient>
+                    {
+                        new IngredientBuilder()
+                            .WithQuantity(1)
+                            .WithName("pain")
+                            .Build(),
+                        new IngredientBuilder()
+                            .WithQuantity(50)
+                            .WithName("thom")
+                            .Build(),
+                        new IngredientBuilder()
+                            .WithQuantity(0.5)
+                            .WithName("tomate")
+                            .Build(),
+                        new IngredientBuilder()
+                            .WithQuantity(10)
+                            .WithName("mayo")
+                            .Build(),
+                        new IngredientBuilder()
+                            .WithQuantity(10)
+                            .WithName("salade")
+                            .Build()
+                    })
+                .WithPrice(4.5)
+                .Build()
         }
     };
 

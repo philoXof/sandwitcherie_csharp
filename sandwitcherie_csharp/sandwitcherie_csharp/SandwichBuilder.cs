@@ -7,11 +7,8 @@ public class SandwichBuilder
     private double Price { get; set; }
 
 
-    public SandwichBuilder(string name, List<Ingredient> ingredients, double price)
+    public SandwichBuilder()
     {
-        Name = name;
-        Ingredients = ingredients;
-        Price = price;
     }
 
 
