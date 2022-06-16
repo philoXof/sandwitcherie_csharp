@@ -2,9 +2,9 @@
 {
     public class Sandwich
     {
-        private string Name { get; }
-        private List<Ingredient> Ingredients { get; }
-        public double Price { get; }
+        private string Name { get; set;}
+        private List<Ingredient> Ingredients { get; set; }
+        public double Price { get; set; }
 
 
         public Sandwich(string name, List<Ingredient> ingredients, double price)
@@ -30,5 +30,25 @@
             } );
             return res;
         }
+
+        
+        public Sandwich setName(string name)
+        {
+            Name = name;
+            return this;
+        }
+        
+        public Sandwich setIngredients(List<Ingredient> ingredients)
+        {
+            Ingredients = ingredients;
+            return this;
+        }
+        
+        public Sandwich setPrice(double price)
+        {
+            Price = price;
+            return this;
+        }
+ 
     }
 }
