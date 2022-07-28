@@ -15,9 +15,11 @@ public class CommandValidation
     // ASCII lettres majuscule 65 à 90
      private static bool OrderVerification(string[] command)
      {
-         for (int i = 0, j = 65; i < command.Length; i++, j++)
+         const int asciiA = 65;
+         const int asciiZ = 90;
+         for (int i = 0, j = asciiA; i < command.Length; i++, j++)
          {
-             if (j > 90) return false;
+             if (j > asciiZ) return false;
              if ((int)command[i][0] != j) return false;
          }
          return true;
